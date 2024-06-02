@@ -1,12 +1,12 @@
 const AppointmentModel = require("../../models/appointment/AppointmentModel");
-const CreateWithUserIdService = require("../../services/common/CreateWithUserIdService");
 const GetAppointmentsService = require("../../services/appointment/GetAppointmentsService");
+const CreateAppointmentService = require("../../services/appointment/CreateAppointmentService");
 const DeleteService = require("../../services/common/DeleteService");
-const DoctorModel = require("../../models/doctor/DoctorModel");
+
 
 
 exports.CreateAppointment=async (req, res) => {
-    await CreateWithUserIdService(req,res,AppointmentModel);
+    await CreateAppointmentService(req,res,AppointmentModel);
 }
 exports.GetAppointments=async(req,res)=>{
     await GetAppointmentsService(req,res,AppointmentModel)

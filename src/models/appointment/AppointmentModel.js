@@ -26,8 +26,8 @@ const AppointmentSchema = new mongoose.Schema(
             maxLength: [11, "name must be maximum 11 characters"],
         },
         age: {
-           type: Number,
-           required: [true, "age is required"],
+            type: String,
+            required: [true, "age is required"],
             trim:true,
         },
         address: {
@@ -41,6 +41,12 @@ const AppointmentSchema = new mongoose.Schema(
             default: "pending",
             enum:["pending", "approved", "cancelled"]
         },
+        invoiceNumber:{
+            type: Number,
+            required: [true, "invoiceNumber is required"],
+            trim:true,
+            unique:true
+        }
     },
     { timestamps: true, versionKey:false}
 );
