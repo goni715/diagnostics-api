@@ -1,10 +1,8 @@
 
-const CreateAppointmentService = async (req, res, Model) => {
+const CreatePatientService = async (req, res, Model) => {
     try{
-        const loginUserId = req.headers.id;
         const reqBody = req.body;
-        reqBody.userId=loginUserId;
-        reqBody.invoiceNumber = Math.floor(100000 + Math.random() * 900000)
+         reqBody.invoiceNumber = Math.floor(100000 + Math.random() * 900000)
         let data = await Model.create(reqBody)
         res.status(201).json({status: true,message: "success", data: data});
     }
@@ -14,4 +12,4 @@ const CreateAppointmentService = async (req, res, Model) => {
 }
 
 
-module.exports=CreateAppointmentService;
+module.exports=CreatePatientService;
