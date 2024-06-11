@@ -14,6 +14,7 @@ const doctorRouter = require("./src/routes/doctorRoute");
 const appointmentRouter = require("./src/routes/appointmentRoute");
 const reportRouter = require("./src/routes/reportRoute");
 const patientRouter = require("./src/routes/patientRoute");
+const invoiceRouter = require("./src/routes/invoiceRoute");
 
 
 
@@ -60,6 +61,7 @@ app.use('/api/doctor', doctorRouter);
 app.use('/api/appointment', appointmentRouter);
 app.use('/api/report', reportRouter);
 app.use('/api/patient', patientRouter);
+app.use('/api/invoice', invoiceRouter);
 
 
 

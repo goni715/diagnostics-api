@@ -62,7 +62,7 @@ const PatientSchema = new mongoose.Schema(
             enum: ["pending", "delivered"]
         },
         invoiceNumber:{
-           type: String,
+           type: Number,
            required: [true, "invoiceNumber is required"],
         }
     },

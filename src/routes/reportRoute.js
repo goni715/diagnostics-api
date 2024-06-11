@@ -7,7 +7,7 @@ const IsAdmin = require("../middlewares/IsAdmin");
 const router = express.Router();
 
 router.post("/create-report", AuthVerifyMiddleware, ReportController.CreateReport);
-// router.get("/get-appointments", AuthVerifyMiddleware, IsAdmin,  AppointmentController.GetAppointments);
+router.get("/get-reports", AuthVerifyMiddleware, IsAdmin,  ReportController.GetReports);
 // router.delete("/delete-appointment/:id", AuthVerifyMiddleware, IsAdmin,  AppointmentController.DeleteAppointment);
 
 

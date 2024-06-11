@@ -5,7 +5,8 @@ const ReportSchema = new mongoose.Schema(
         invoiceNumber:{
             type: Number,
             required: [true, "invoiceNumber is required"],
-            unique:true
+            unique:true,
+            ref:"patients"
         },
         result: {
             type: String,

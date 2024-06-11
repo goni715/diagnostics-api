@@ -9,6 +9,7 @@ const router = express.Router();
 
 
 router.post('/create-patient', AuthVerifyMiddleware, IsAdmin, PatientController.CreatePatient);
+router.get('/get-patients', AuthVerifyMiddleware, IsAdmin, PatientController.GetPatients);
 
 
 

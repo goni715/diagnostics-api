@@ -1,10 +1,10 @@
-const AppointmentModel = require("../../models/appointment/AppointmentModel");
+const PatientModel = require("../../models/patient/PatientModel");
 const CreateReportService = async (req, res, ReportModel) => {
     try{
         let {invoiceNumber} = req.body;
-        let appointment =await AppointmentModel.findOne({invoiceNumber:invoiceNumber});
+        let patient =await PatientModel.findOne({invoiceNumber:invoiceNumber});
 
-        if(appointment){
+        if(patient){
             let report = await ReportModel.create(req.body)
             res.status(201).json({message: "success", data: report});
         }
