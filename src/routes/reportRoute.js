@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/create-report", AuthVerifyMiddleware, ReportController.CreateReport);
 router.get("/get-reports", AuthVerifyMiddleware, IsAdmin,  ReportController.GetReports);
-// router.delete("/delete-appointment/:id", AuthVerifyMiddleware, IsAdmin,  AppointmentController.DeleteAppointment);
+router.get("/search-report/:invoiceNumber/:phone", ReportController.SearchReport);
 
 
 module.exports = router;

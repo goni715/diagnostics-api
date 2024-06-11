@@ -8,6 +8,12 @@ const ReportSchema = new mongoose.Schema(
             unique:true,
             ref:"patients"
         },
+        phone: {
+            type: String,
+            trim:true,
+            required: [true, "phone is required"],
+            maxLength: [11, "phone number must be maximum 11 characters"],
+        },
         result: {
             type: String,
             required: [true, "result is required"],
