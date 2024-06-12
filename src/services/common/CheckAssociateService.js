@@ -1,4 +1,3 @@
-const DeleteService = require("./DeleteService");
 
 const CheckAssociateService = async (req, res, QueryObject, AssociateModel) => {
     try{
