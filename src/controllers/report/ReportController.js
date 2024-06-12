@@ -1,6 +1,7 @@
 const ReportModel = require("../../models/report/ReportModel");
 const CreateReportService = require("../../services/report/CreateReportService");
 const SearchReportService = require("../../services/report/SearchReportService");
+const mongoose = require("mongoose");
 
 exports.CreateReport=async (req, res) => {
     await CreateReportService(req,res,ReportModel);
@@ -29,7 +30,12 @@ exports.SearchReport=async (req, res) => {
 
 exports.GetReport=async (req, res) => {
     try{
+        let id =req.params.id;
+        const ObjectId = mongoose.Types.ObjectId;
+        let QueryObject = {_id: new ObjectId(id)};
+
         const data = await ReportModel.aggregate([
+            {$match: QueryObject},
             {$lookup: {from: "patients", localField: "invoiceNumber", foreignField: "invoiceNumber", as: "patient"}},
             { $unwind: '$patient' }, // Deconstruct the comments array
             {
