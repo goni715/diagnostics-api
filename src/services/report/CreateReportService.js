@@ -3,9 +3,9 @@ const CreateReportService = async (req, res, ReportModel) => {
     try{
         let {invoiceNumber} = req.body;
         let patient =await PatientModel.findOne({invoiceNumber:invoiceNumber});
-        let report =await ReportModel.findOne({invoiceNumber:invoiceNumber});
 
         if(patient){
+            let report =await ReportModel.findOne({invoiceNumber:invoiceNumber});
             if(report){
                 res.status(409).json({message: "fail", data: "This Invoice Number already associated with Report!"});
             }

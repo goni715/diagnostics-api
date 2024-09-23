@@ -65,6 +65,14 @@ app.use('/api/invoice', invoiceRouter);
 
 
 
+
+//Testing-Route- HomPage
+app.get('/', (req, res)=>{
+    res.send('This is Daignostics center server')
+})
+
+
+
 //Undefined Route
 app.use('*',(req,res)=>{
     res.status(404).json({message:"Fail", data:"Route Not Found"});
