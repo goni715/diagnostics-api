@@ -9,6 +9,7 @@ const router = express.Router();
 
 
 router.get('/get-invoices', AuthVerifyMiddleware, IsAdmin, InvoiceController.GetInvoices);
+router.get('/get-recent-invoices', AuthVerifyMiddleware, IsAdmin, InvoiceController.GetRecentInvoices);
 
 
 

@@ -3,6 +3,7 @@ const GetAppointmentsService = require("../../services/appointment/GetAppointmen
 const DeleteService = require("../../services/common/DeleteService");
 const CreateService = require("../../services/common/CreateService");
 const UpdateService = require("../../services/common/UpdateService");
+const GetRecentAppointmentsSeevice = require("../../services/appointment/GetRecentAppointmentsService");
 
 
 
@@ -11,6 +12,10 @@ exports.CreateAppointment=async (req, res) => {
 }
 exports.GetAppointments=async(req,res)=>{
     await GetAppointmentsService(req,res,AppointmentModel)
+}
+
+exports.GetRecentAppointments=async(req,res)=>{
+    await GetRecentAppointmentsSeevice(req,res,AppointmentModel)
 }
 
 exports.DeleteAppointment = async (req, res) =>{
